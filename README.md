@@ -415,3 +415,4 @@ export default function ManualHeader() {
         </div>
     )
 }
+# nextjs-smart-contract-lottery
