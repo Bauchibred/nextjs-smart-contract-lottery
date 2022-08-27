@@ -18,12 +18,13 @@ export default function ManualHeader() {
             // enableWeb3({provider: window.localStorage.getItem("connected")}) // add walletconnect
         }
     }, [isWeb3Enabled])
-    // no array, run on every render 
+    // no array, run on every render
     // empty array, run once
     // dependency array, run when the stuff in it changesan
 
     useEffect(() => {
         Moralis.onAccountChanged((account) => {
+            //we get the onAccountChanged from Moralis and this just helps us in the sense of when we change an account and it still shows on our console
             console.log(`Account changed to ${account}`)
             if (account == null) {
                 window.localStorage.removeItem("connected")

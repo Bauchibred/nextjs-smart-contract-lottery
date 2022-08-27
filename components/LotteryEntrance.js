@@ -14,11 +14,12 @@ export default function LotteryEntrance() {
 
     // State hooks
     // https://stackoverflow.com/questions/58252454/react-hooks-using-usestate-vs-just-variables
-    const [entranceFee, setEntranceFee] = useState("0")
+    const [entranceFee, setEntranceFee] = useState("0") // here we use the usestate hook which just tells our browser thst our entrancefee starts at zero, and whenever it changes our page rerenders
     const [numberOfPlayers, setNumberOfPlayers] = useState("0")
     const [recentWinner, setRecentWinner] = useState("0")
 
     const dispatch = useNotification()
+    //so that we can use our notis below
 
     const {
         runContractFunction: enterRaffle,
@@ -34,6 +35,7 @@ export default function LotteryEntrance() {
     })
 
     /* View Functions */
+    //most of these functions are just so we can get to our smartcontract code, and get the values
 
     const { runContractFunction: getEntranceFee } = useWeb3Contract({
         abi: abi,
@@ -56,7 +58,7 @@ export default function LotteryEntrance() {
         params: {},
     })
 
-    async function updateUIValues() {
+    async function updateUIValues() {//this is so our page rerenders automatically, we create it aside and then call it in the handlesuccess
         // Another way we could make a contract call:
         // const options = { abi, contractAddress: raffleAddress }
         // const fee = await Moralis.executeFunction({
@@ -84,7 +86,7 @@ export default function LotteryEntrance() {
     // const filter = {
     //     address: raffleAddress,
     //     topics: [
-    //         // the name of the event, parnetheses containing the data type of each event, no spaces
+            // the name of the event, parnetheses containing the data type of each event, no spaces
     //         utils.id("RaffleEnter(address)"),
     //     ],
     // }
@@ -97,7 +99,7 @@ export default function LotteryEntrance() {
             position: "topR",
             icon: "bell",
         })
-    }
+    } //this is is the notis that show when our user enters the raffle with a little bell icon
 
     // Probably could add some error handling
     const handleSuccess = async (tx) => {
@@ -117,11 +119,11 @@ export default function LotteryEntrance() {
                             await enterRaffle({
                                 // onComplete:
                                 // onError:
-                                onSuccess: handleSuccess,
-                                onError: (error) => console.log(error),
+                                onSuccess: handleSuccess,//a note that onSuccess just means that the transaction has been successfully sent to mmask, and not that the transaction has been completed
+                                onError: (error) => console.log(error), //very important to incorporate this line to future coding as this helps us know what type of error we are dealing with
                             })
                         }
-                        disabled={isLoading || isFetching}
+                        disabled={isLoading || isFetching}//so here we are disabling the ability of someone to click the button when the transaction is loading or fetching
                     >
                         {isLoading || isFetching ? (
                             <div className="animate-spin spinner-border h-8 w-8 border-b-2 rounded-full"></div>
