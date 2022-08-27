@@ -49,18 +49,10 @@ Video coming soon...
 ## Quickstart
 
 ```
-git clone https://github.com/PatrickAlphaC/nextjs-smartcontract-lottery-fcc
-cd nextjs-smartcontract-lottery-fcc
+git clone https://github.com/Bauchibred/nextjs-smart-contract-lottery
+cd nextjs-smart-contract-lottery
 yarn
 yarn dev
-```
-
-## Typescript
-
-If you want to get to typescript and you cloned the javascript version, just run:
-
-```
-git checkout typescript
 ```
 
 ### Optional Gitpod
