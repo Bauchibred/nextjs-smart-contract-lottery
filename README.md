@@ -1,10 +1,3 @@
-# NextJS Smartcontract Lottery (Raffle) FCC
-
-This is a section of the Javascript Blockchain/Smart Contract FreeCodeCamp Course.
-
-*[⌨️ (16:34:07) Lesson 10: NextJS Smart Contract Lottery (Full Stack / Front End)](https://www.youtube.com/watch?v=gyMwXuJrbJQ&t=59647s)*
-
-[Full Repo](https://github.com/smartcontractkit/full-blockchain-solidity-course-js)
 
 ![App](img/readme-app.png)
 
@@ -192,7 +185,7 @@ ETH/Polygon/Avalanche/etc Address: 0x9680201d9c93d65a3603d2088d125e955c73BD65
 [![Patrick Collins Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@patrick.collins_58673/)
 
 
-
+MORE EXPLANATION FOR CODE
 
 NextJs this is a framework that's built on the Reactjs
 And th reason we are using the React and Nextjs is cause react is really one of the most poopular framworks out there right now to use
